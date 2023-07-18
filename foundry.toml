@@ -6,8 +6,7 @@ out = 'artifacts_forge'
 cache_path = 'cache_forge'
 
 optimizer = true
-optimizer_runs = 9999
-ignored_error_codes = [8261]
+optimizer_runs = 200
 
 [fuzz]
 runs = 10000
