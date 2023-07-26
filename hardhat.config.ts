@@ -54,6 +54,11 @@ const config: HardhatUserConfig = {
       url: process.env.ARBITRUM_RPC || '',
       accounts,
     },
+    arbitrum_goerli: {
+      url: process.env.ARBITRUM_GOERLI_RPC || '',
+      accounts,
+      chainId: 421613,
+    },
     optimism: {
       url: `${process.env.OPTIMISM_RPC}`,
       accounts,
