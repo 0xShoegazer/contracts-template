@@ -53,6 +53,7 @@ const config: HardhatUserConfig = {
     arbitrum: {
       url: process.env.ARBITRUM_RPC || '',
       accounts,
+      chainId: 42161,
     },
     arbitrum_goerli: {
       url: process.env.ARBITRUM_GOERLI_RPC || '',
@@ -62,9 +63,15 @@ const config: HardhatUserConfig = {
     optimism: {
       url: `${process.env.OPTIMISM_RPC}`,
       accounts,
+      chainId: 10,
+    },
+    optimism_goerli: {
+      url: `${process.env.OPTIMISM_GOERLI_RPC}`,
+      accounts,
+      chainId: 420,
     },
     base: {
-      url: `https://developer-access-mainnet.base.org/`,
+      url: process.env.BASE_GOERLI_RPC || '',
       accounts,
       chainId: 8453,
       gas: 500000,
@@ -78,6 +85,7 @@ const config: HardhatUserConfig = {
     bsc: {
       url: process.env.BSC_RPC || '',
       accounts,
+      chainId: 56,
     },
   },
 };
