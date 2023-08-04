@@ -71,13 +71,13 @@ const config: HardhatUserConfig = {
       chainId: 420,
     },
     base: {
-      url: process.env.BASE_GOERLI_RPC || '',
+      url: process.env.BASE_RPC || '',
       accounts,
       chainId: 8453,
       gas: 500000,
       gasPrice: 100,
     },
-    base_testnet: {
+    base_goerli: {
       url: process.env.BASE_GOERLI_RPC,
       accounts,
       chainId: 84531,
