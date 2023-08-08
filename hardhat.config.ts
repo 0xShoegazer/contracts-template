@@ -81,6 +81,8 @@ const config: HardhatUserConfig = {
       url: process.env.BASE_GOERLI_RPC,
       accounts,
       chainId: 84531,
+      gas: 500000,
+      gasPrice: 100,
     },
     bsc: {
       url: process.env.BSC_RPC || '',
