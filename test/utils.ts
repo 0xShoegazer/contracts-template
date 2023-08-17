@@ -53,7 +53,7 @@ export function getERC20(address: string, signer) {
 }
 
 export function getRandomBytes32() {
-  const values = ['1', '2', '64', , '128', '256'];
+  const values = ['1', '2', '64', '128', '256'];
   const rand = Math.round(Math.random() * (values.length - 1));
 
   return ethers.utils.hexZeroPad(parseEther(values[rand]).toHexString(), 32);
