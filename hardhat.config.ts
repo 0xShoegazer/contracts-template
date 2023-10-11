@@ -28,7 +28,10 @@ const config: HardhatUserConfig = {
     // override defaults as needed: https://www.npmjs.com/package/hardhat-contract-sizer
   },
   etherscan: {
-    apiKey: process.env.ETHERSCAN_API_KEY,
+    apiKey: {
+      base: process.env.BASE_SCAN_API_KEY,
+      scrollSepolia: 'abc',
+    },
     customChains: [
       {
         network: 'base',
@@ -36,6 +39,14 @@ const config: HardhatUserConfig = {
         urls: {
           apiURL: 'https://api.basescan.org',
           browserURL: 'https://basescan.org',
+        },
+      },
+      {
+        network: 'scrollSepolia',
+        chainId: 534351,
+        urls: {
+          apiURL: 'https://sepolia-blockscout.scroll.io/api',
+          browserURL: 'https://sepolia-blockscout.scroll.io/',
         },
       },
     ],
@@ -77,7 +88,7 @@ const config: HardhatUserConfig = {
       // gas: 500000,
       // gasPrice: 100,
     },
-    base_goerli: {
+    baseGoerli: {
       url: process.env.BASE_GOERLI_RPC,
       accounts,
       chainId: 84531,
@@ -88,6 +99,11 @@ const config: HardhatUserConfig = {
       url: process.env.BSC_RPC || '',
       accounts,
       chainId: 56,
+    },
+    scrollSepolia: {
+      url: process.env.SCROLL_SEPOLIA_RPC,
+      accounts,
+      chainId: 534351,
     },
   },
 };
