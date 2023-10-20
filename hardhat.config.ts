@@ -31,6 +31,7 @@ const config: HardhatUserConfig = {
     apiKey: {
       base: process.env.BASE_SCAN_API_KEY,
       scrollSepolia: 'abc',
+      scroll: process.env.SCROLL_SCAN_API_KEY,
     },
     customChains: [
       {
@@ -47,6 +48,14 @@ const config: HardhatUserConfig = {
         urls: {
           apiURL: 'https://sepolia-blockscout.scroll.io/api',
           browserURL: 'https://sepolia-blockscout.scroll.io/',
+        },
+      },
+      {
+        network: 'scroll',
+        chainId: 534352,
+        urls: {
+          apiURL: 'https://api.scrollscan.com/api',
+          browserURL: 'https://scrollscan.com/',
         },
       },
     ],
