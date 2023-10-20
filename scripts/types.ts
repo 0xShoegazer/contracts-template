@@ -6,5 +6,6 @@ export enum ChainId {
   OPTIMISM = 10,
   OPTIMISM_GOERLI = 420,
   BSC = 56,
+  SCROLL = 534352,
   SCROLL_SEPOLIA = 534351,
 }

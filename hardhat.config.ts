@@ -100,6 +100,11 @@ const config: HardhatUserConfig = {
       accounts,
       chainId: 56,
     },
+    scroll: {
+      url: process.env.SCROLL_RPC,
+      accounts,
+      chainId: 534352,
+    },
     scrollSepolia: {
       url: process.env.SCROLL_SEPOLIA_RPC,
       accounts,
