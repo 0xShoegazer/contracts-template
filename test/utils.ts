@@ -7,8 +7,8 @@ import { JsonRpcProvider } from '@ethersproject/providers';
 
 export const keccak256 = ethers.utils.solidityKeccak256;
 
-export async function getCurrentBlockTime() {
-  return (await ethers.provider.getBlock(await ethers.provider.getBlockNumber())).timestamp;
+export async function getCurrentBlockTime(buffer = 0) {
+  return (await ethers.provider.getBlock(await ethers.provider.getBlockNumber())).timestamp + buffer;
 }
 
 export const giveTokens = async (
