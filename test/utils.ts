@@ -1,9 +1,15 @@
-import { BigNumber, Contract, ethers } from 'ethers';
+import { BigNumber, Contract } from 'ethers';
 import { parseEther } from 'ethers/lib/utils';
 import * as helpers from '@nomicfoundation/hardhat-network-helpers';
 import * as erc20 from '../node_modules/@openzeppelin/contracts/build/contracts/ERC20.json';
+import { ethers } from 'hardhat';
+import { JsonRpcProvider } from '@ethersproject/providers';
 
 export const keccak256 = ethers.utils.solidityKeccak256;
+
+export async function getCurrentBlockTime() {
+  return (await ethers.provider.getBlock(await ethers.provider.getBlockNumber())).timestamp;
+}
 
 export const giveTokens = async (
   tokenAddress: string,
@@ -28,7 +34,7 @@ export const toBytes32 = (bn: BigNumber) => {
 };
 
 export const setStorageAt = async (
-  provider: ethers.providers.JsonRpcProvider,
+  provider: JsonRpcProvider,
   contractAddress: string,
   index: string,
   value: BigNumber
@@ -38,7 +44,7 @@ export const setStorageAt = async (
 };
 
 export const giveTokenBalanceFor = async (
-  provider: ethers.providers.JsonRpcProvider,
+  provider: JsonRpcProvider,
   contractAddress: string,
   addressToSet: string,
   storageSlot: number,
