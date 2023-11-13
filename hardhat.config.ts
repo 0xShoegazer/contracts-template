@@ -67,7 +67,7 @@ const config: HardhatUserConfig = {
     hardhat: {
       forking: {
         url: process.env.BASE_RPC || '',
-        blockNumber: 2973850, // 8/22/2023 ~4:45PM
+        blockNumber: 5984940, // 10/31/23 9:30AM EST
       },
     },
     arbitrum: {
@@ -101,8 +101,8 @@ const config: HardhatUserConfig = {
       url: process.env.BASE_GOERLI_RPC,
       accounts,
       chainId: 84531,
-      // gas: 500000,
-      // gasPrice: 100,
+      gas: 500000,
+      gasPrice: 100,
     },
     bsc: {
       url: process.env.BSC_RPC || '',
