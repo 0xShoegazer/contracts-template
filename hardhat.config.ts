@@ -32,6 +32,7 @@ const config: HardhatUserConfig = {
       base: process.env.BASE_SCAN_API_KEY,
       scrollSepolia: 'abc',
       scroll: process.env.SCROLL_SCAN_API_KEY,
+      neonevm: 'test',
     },
     customChains: [
       {
@@ -56,6 +57,22 @@ const config: HardhatUserConfig = {
         urls: {
           apiURL: 'https://api.scrollscan.com/api',
           browserURL: 'https://scrollscan.com/',
+        },
+      },
+      {
+        network: 'neonevm',
+        chainId: 245022926,
+        urls: {
+          apiURL: 'https://devnet-api.neonscan.org/hardhat/verify',
+          browserURL: 'https://devnet.neonscan.org',
+        },
+      },
+      {
+        network: 'neonevm',
+        chainId: 245022934,
+        urls: {
+          apiURL: 'https://api.neonscan.org/hardhat/verify',
+          browserURL: 'https://neonscan.org',
         },
       },
     ],
@@ -118,6 +135,16 @@ const config: HardhatUserConfig = {
       url: process.env.SCROLL_SEPOLIA_RPC,
       accounts,
       chainId: 534351,
+    },
+    neondevnet: {
+      url: 'https://devnet.neonevm.org',
+      accounts,
+      chainId: 245022926,
+    },
+    neonmainnet: {
+      url: 'https://neon-proxy-mainnet.solana.p2p.org',
+      accounts,
+      chainId: 245022934,
     },
   },
 };
