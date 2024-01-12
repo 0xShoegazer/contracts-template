@@ -120,6 +120,16 @@ const config: HardhatUserConfig = {
       accounts,
       chainId: 534351,
     },
+    inEVM: {
+      url: 'https://inevm.calderachain.xyz/http',
+      accounts,
+      chainId: 2525,
+    },
+    inDevEVM: {
+      url: 'https://inevm-rpc.caldera.dev',
+      accounts,
+      chainId: 1738,
+    },
   },
 };
 
