@@ -2,10 +2,11 @@
   "name": "contracts-template",
   "license": "MIT",
   "scripts": {
-    "build": "forge build",
+    "build": "npx hardhat compile",
     "build:watch": "forge build --watch",
     "debug": "forge debug",
-    "test": "forge test -vvv",
+    "test": "npx hardhat test",
+    "test:forge": "forge test -vvv",
     "test:debug": "forge test -vvv --debug",
     "test:watch": "forge test --watch --run-all -vvv",
     "deploy": "npx hardhat run ./scripts/deploy.ts --network",

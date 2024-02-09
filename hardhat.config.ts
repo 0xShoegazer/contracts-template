@@ -16,6 +16,7 @@ const config: HardhatUserConfig = {
       {
         version: '0.8.15',
         settings: {
+          // evmVersion: 'london',
           optimizer: {
             enabled: true,
             runs: 200,
@@ -32,7 +33,7 @@ const config: HardhatUserConfig = {
       base: process.env.BASE_SCAN_API_KEY,
       scrollSepolia: 'abc',
       scroll: process.env.SCROLL_SCAN_API_KEY,
-      neonevm: 'test',
+      mode: 'mode',
     },
     customChains: [
       {
@@ -57,6 +58,14 @@ const config: HardhatUserConfig = {
         urls: {
           apiURL: 'https://api.scrollscan.com/api',
           browserURL: 'https://scrollscan.com/',
+        },
+      },
+      {
+        network: 'mode',
+        chainId: 34443,
+        urls: {
+          apiURL: 'https://api.routescan.io/v2/network/mainnet/evm/34443/etherscan',
+          browserURL: 'https://modescan.io',
         },
       },
     ],
@@ -129,6 +138,16 @@ const config: HardhatUserConfig = {
       url: process.env.FRAXTAL_TESTNET_RPC,
       accounts,
       chainId: 2522,
+    },
+    mode: {
+      url: process.env.MODE_RPC,
+      accounts,
+      chainId: 34443,
+    },
+    modeTestnet: {
+      url: process.env.MODE_TESTNET_RPC,
+      accounts,
+      chainId: 919,
     },
   },
 };
