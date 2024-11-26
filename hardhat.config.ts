@@ -1,10 +1,6 @@
 import * as dotenv from 'dotenv';
 import { HardhatUserConfig } from 'hardhat/config';
 import '@nomicfoundation/hardhat-toolbox';
-import '@openzeppelin/hardhat-upgrades';
-import '@nomicfoundation/hardhat-verify';
-import 'hardhat-contract-sizer';
-import 'hardhat-gas-reporter';
 
 dotenv.config();
 
@@ -24,9 +20,6 @@ const config: HardhatUserConfig = {
         },
       },
     ],
-  },
-  contractSizer: {
-    // override defaults as needed: https://www.npmjs.com/package/hardhat-contract-sizer
   },
   etherscan: {
     apiKey: {
@@ -69,9 +62,6 @@ const config: HardhatUserConfig = {
         },
       },
     ],
-  },
-  gasReporter: {
-    enabled: true,
   },
   networks: {
     hardhat: {
